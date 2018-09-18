@@ -1,6 +1,6 @@
 ﻿namespace PingPongGame
 {
-    partial class Form1
+    partial class Game
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.Racket = new System.Windows.Forms.PictureBox();
             this.Ball = new System.Windows.Forms.PictureBox();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.PlayerScore = new System.Windows.Forms.Label();
+            this.gameMode = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Racket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Ball)).BeginInit();
             this.SuspendLayout();
             // 
             // Racket
             // 
-            this.Racket.BackColor = System.Drawing.Color.DarkRed;
-            this.Racket.Location = new System.Drawing.Point(280, 454);
+            this.Racket.BackColor = System.Drawing.Color.Black;
+            this.Racket.Location = new System.Drawing.Point(283, 498);
             this.Racket.Name = "Racket";
-            this.Racket.Size = new System.Drawing.Size(364, 50);
+            this.Racket.Size = new System.Drawing.Size(364, 22);
             this.Racket.TabIndex = 0;
             this.Racket.TabStop = false;
             // 
@@ -50,7 +52,7 @@
             // 
             this.Ball.BackColor = System.Drawing.Color.Black;
             this.Ball.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Ball.Location = new System.Drawing.Point(412, 327);
+            this.Ball.Location = new System.Drawing.Point(430, 327);
             this.Ball.Name = "Ball";
             this.Ball.Size = new System.Drawing.Size(55, 55);
             this.Ball.TabIndex = 1;
@@ -68,25 +70,38 @@
             this.PlayerScore.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.PlayerScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.PlayerScore.ForeColor = System.Drawing.Color.Red;
-            this.PlayerScore.Location = new System.Drawing.Point(30, 539);
+            this.PlayerScore.Location = new System.Drawing.Point(34, 539);
             this.PlayerScore.Name = "PlayerScore";
             this.PlayerScore.Size = new System.Drawing.Size(36, 26);
             this.PlayerScore.TabIndex = 2;
             this.PlayerScore.Text = "00";
             // 
-            // Form1
+            // gameMode
+            // 
+            this.gameMode.AutoSize = true;
+            this.gameMode.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.gameMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.gameMode.ForeColor = System.Drawing.Color.Black;
+            this.gameMode.Location = new System.Drawing.Point(819, 539);
+            this.gameMode.Name = "gameMode";
+            this.gameMode.Size = new System.Drawing.Size(61, 26);
+            this.gameMode.TabIndex = 4;
+            this.gameMode.Text = "Easy";
+            // 
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(928, 574);
+            this.Controls.Add(this.gameMode);
             this.Controls.Add(this.PlayerScore);
             this.Controls.Add(this.Ball);
             this.Controls.Add(this.Racket);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Game";
+            this.Text = "Ping Pong";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.Racket)).EndInit();
@@ -102,6 +117,7 @@
         private System.Windows.Forms.PictureBox Ball;
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label PlayerScore;
+        private System.Windows.Forms.Label gameMode;
     }
 }
 
